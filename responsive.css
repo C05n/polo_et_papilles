@@ -40,6 +40,23 @@
       width: 80%;
       margin-top: 1.5em;
    }
+   /*** Services ***/
+   .services {
+      align-items: center;
+      gap: 1em;
+   }
+   .services-private,.services-professional,.services-events {
+      width: 90%;
+   }
+   .services-title {
+      font-size: 1.5em;
+   }
+   .services-subtitle {
+      font-size: 1.2em;
+   }
+   .services-description {
+      font-size: 0.9em;
+   }
    /*** Contact ***/
    .contact-text {
       width: 90%;
