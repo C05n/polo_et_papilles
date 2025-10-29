@@ -6,6 +6,7 @@
    --white-font: #FFFFFF;
    --border-color: #D3AB65;
    --border-radius: 10px;
+   --box-shadow: 0 0 20px 5px #00000080;
 }
 * {
    margin: 0;
@@ -50,7 +51,7 @@ header {
    border-bottom: 1px solid var(--border-color);
    display: flex;
    height: 9em;
-   box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.4);
+   box-shadow: var(--box-shadow);
 }
 .header_content {
    display: flex;
@@ -117,7 +118,7 @@ header {
    border-radius: var(--border-radius);
    border: 1px solid var(--border-color);
    overflow: hidden;
-   box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.5);
+   box-shadow: var(--box-shadow);
    object-fit: cover;
    object-position: center;
 }
@@ -133,6 +134,7 @@ header {
    width: 30%;
    border: 1px solid var(--main-font-color);
    border-radius: var(--border-radius);
+   box-shadow: var(--box-shadow);
 }
 .services-private {
    background-image: url("./assets/pablo-lancaster-jones-vh7vdASlspA-unsplash.jpg");
@@ -187,6 +189,38 @@ header {
    margin-top: 3em;
    align-self: center;
 }
+/*** Menu ***/
+.menu {
+   justify-content: space-between;
+   width: 80%;
+}
+.menu-container {
+   width: 20%;
+   height: 40px;
+   background-color: var(--main-bg-color);
+   
+}
+.menu-container-link {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid var(--border-color);
+   border-radius: var(--border-radius);
+   cursor: pointer;
+   font-size: 1.2em;
+   font-weight: 600;
+   color: var(--main-font-color);
+}
+.menu-container-link:hover {
+   background-color: #00000050;
+   color: var(--secondary-font-color);
+   border: 1px solid var(--secondary-font-color);
+}
+.menu-container-right {
+   /* align-self: flex-end; */
+}
 /*** Contact ***/
 .contact {
    justify-content: space-between;
@@ -237,7 +271,7 @@ header {
    border: 2px solid var(--main-font-color);
    border-radius: var(--border-radius);
    overflow: hidden;
-   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.2);
+   box-shadow: var(--box-shadow);
 }
 /*** Footer ***/
 footer {
@@ -246,6 +280,7 @@ footer {
    padding: 0 20px;
    background-color: var(--main-bg-color);
    border-top: 1px solid var(--main-font-color);
+   box-shadow: var(--box-shadow);
 }
 .footer_content {
    height: 100%;
