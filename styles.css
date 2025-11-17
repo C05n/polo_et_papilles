@@ -18,10 +18,21 @@ body {
    color: var(--white-font);
    list-style-type: none;
    font-family: Montserrat, sans-serif;
+   background-image: url("./assets/low-poly-grid.svg");
+   backdrop-filter: opacity(0.5);
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+main {
+   flex: 1;
 }
 a {
    color: inherit;
    text-decoration: none;
+}
+ul {
+   list-style-type: none;
 }
 section {
    width: 100%;
@@ -190,33 +201,57 @@ header {
    align-self: center;
 }
 /*** Menu ***/
-.menu {
-   justify-content: space-around;
-   width: 80%;
+.menu-filters {
+   margin-top: 100px;
 }
-.menu-container {
-   width: 20%;
-   height: 40px;
-   background-color: var(--main-bg-color);
-   
-}
-.menu-container-link {
-   width: 100%;
-   height: 100%;
+.menu-filters-container {
    display: flex;
+   flex-direction: row;
    justify-content: center;
-   align-items: center;
+   gap: 1em;
+   margin-bottom: 2em;
+}
+.menu-filters-container-item {
+   padding: 10px 30px;
    border: 1px solid var(--border-color);
    border-radius: var(--border-radius);
-   cursor: pointer;
    font-size: 1.2em;
    font-weight: 600;
    color: var(--main-font-color);
+   background-color: var(--main-bg-color);
+   cursor: pointer;
 }
-.menu-container-link:hover {
-   background-color: #00000050;
+.menu-filters-container-item:hover, .active {
    color: var(--secondary-font-color);
-   border: 1px solid var(--secondary-font-color);
+   border-color: var(--secondary-font-color);
+}
+.menu {
+   gap: 30px;
+   padding: 20px;
+   margin-bottom: 30px;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25%, 48%));
+   gap: 3rem;
+   text-align: center;
+}
+.menu:before {
+   display: none;
+}
+.menu-item {
+   display: flex;
+   flex-direction: column;
+   
+}
+.menu-item-title {
+   font-size: 1.5em;
+   font-weight: 700;
+   color: var(--main-font-color);
+   text-align: center;
+}
+.menu-item-subtitle {
+   font-size: 1.25em;
+   font-weight: 500;
+   color: var(--secondary-font-color);
 }
 /*** Contact ***/
 .contact {
@@ -225,7 +260,6 @@ header {
 }
 .contact-text {
    width: calc(50% - 2em);
-   background-color: var(--secondary-bg-color);
    border-radius: 10px;
    display: flex;
    flex-direction: column;
@@ -261,8 +295,6 @@ header {
    border-radius: 50%;
 }
 .map {
-   /* position: absolute;
-   right: 2em; */
    width: 40%;
    height: 500px;
    border: 2px solid var(--main-font-color);

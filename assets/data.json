@@ -1,0 +1,53 @@
+{
+   "Plats Uniques": [
+      { "title":"Cassoulet Toulousain","description":"Min. 10 Pers","subtitle": "Haricots blancs à la tomate, Saucisse, saucisson à l’ail, Tranche de lard, Manchon de canard confit." },
+      { "title": "Fondant de porc (Joue)","description":"Min. 10 Pers", "subtitle": "Sauce cidre, Sauce Dijonnaise, servie avec une poellée de pomme de terre" },
+      { "title": "Joue de boeuf Bourguignone","description":"Min. 10 Pers", "subtitle": "Servie avec une poellée de pommes de terre" },
+      { "title": "Magret de canard","description":"Min. 10 Pers", "subtitle": "Sauce poivre, Sauce Andalouse, Sauce crème Balsamique, Servie avec une poellée de pommes de terre" },
+      { "title": "Suprême de Pintade","description":"Min. 10 Pers", "subtitle": "Sauce forestière, Servie avec une poellée de pommes de terre" },
+      { "title": "Saute de dindonneau","description":"Min. 10 Pers", "subtitle": "Aux petits oignons, servie avec des petis pois à la Française" },
+      { "title": "Blanquette de veau à l’ancienne","description":"Min. 10 Pers", "subtitle": "Servie avec du riz" },
+      { "title": "Boeuf Bourguignion","description":"Min. 10 Pers", "subtitle": "Servi avec des pommes de terre vapeurs" },
+      { "title": "La Papillade","description":"Min. 20 Pers", "subtitle": "Pomme de terre, Epices, Oignions/Echalottes, Poivrons, Tomate, Petits pois, Courgettes, Saucisse, Jambon fumé en morceaux, Filet de poulet + Sauce" },
+      { "title": "La «Papillade de l’océan»","description":"Min. 20 Pers", "subtitle": "Pomme de terre, Oignon, Poivrons, Tomates, Petits pois, Moules, Crevettes, Encornets en persillade, Chorizo, Cuisse de poulet" },
+      { "title": "Jambalaya","description":"Min. 40 Pers", "subtitle": "Riz, Oignons, Poivrons, Tomate, Petis pois, Crevettes, Moules, Saucisses fumée, Jambon fumé, Ananas, Epices, Filet de poulet + Sauce" },
+      { "title": "Paëlla Royale","description":"Min. 40 Pers", "subtitle": "Riz, Oignons, Tomates, Poivrons, Petits pois, Moules, Crevettes, Encornets en persillade, Chorizo, Epices, Cuisse de poulet" },
+      { "title": "Paëlla Del Mar","description":"Min. 40 Pers", "subtitle": "Riz, Oignons, Tomates, Poivrons, Petits pois, Moules, Crevettes, Encornet en persillade, Filet de Merlu et Saumon, Sauce langoustine, Chorizo, Epices" },
+      { "title": "Tajine de Poulet","description":"Min. 10 Pers", "subtitle": "Poulet, Oignons, Ail, Citron confit, Coriandre, Piment, Abricot sec/Epices, Olives, Amandes, Carottes, Semoule" },
+      { "title": "Couscous Royale","description":"Min. 10 Pers", "subtitle": "Agneau, Poulet, Merguez, Semoule, Epices, Carottes, Navets, Céleri branche, Tomates, Courgettes" },
+      { "title": "Rougail Saucisses","description":"Min. 10 Pers", "subtitle": "Saucisse fumée, Oignons, Epices, Tomates, Sauce, Riz cuisiné" },
+      { "title": "Chili Con Carne","description":"Min. 10 Pers", "subtitle": "Viande de boeuf, Haricots rouges, Tomates, Riz, Maïs, Epices." },
+      { "title": "Poulet Basquaise","description":"Min. 10 Pers", "subtitle": "Cuisse de poulet, Tomates, Poivrons, Oignons, Sauce, Riz cuisiné" },
+      { "title": "Colombo de porc","description":"Min. 10 Pers", "subtitle": "Moelleux de porc, Oignons, Echalottes, Épices, Piment, Ananas, Riz" },
+      { "title": "Lasagne Bolognaise","description":"Min. 10 Pers", "subtitle": "Lasagne, Viande hachée de boeuf, Oignons, Tomates, Sauce, Persil" },
+      { "title": "Choucroute de la Mer","description":"Min. 10 Pers", "subtitle": "Choux, Pommes de terre, Oignons, Crevettes, Moules, Langoustines, Saumon, Merlu, Calamars, Sauce safrannée" },
+      { "title": "Carbonade de Boeuf à la bière","description":"Min. 10 Pers", "subtitle": "Paleron de boeuf, Oignons, Bière brune, Sauce, Servie avec frites maison, ou écrasé de pomme de terre" },
+      { "title": "Tartiflette","description":"Min. 10 Pers", "subtitle": "Pomme de terre, Lardons, Reblochon, Vin blanc, Crème" }
+   ],
+   "Planches Apéro": [
+      { "title": "Planche Apéro «POLO»","description":"Min. 8 Pers", "subtitle":"Assortiment Charcuterie + Fromage, Crudités et condiments"},
+      { "title": "Planche Apéro «Papilles»","description":"Min. 8 Pers", "subtitle":"Assortiment de charcuterie fine"}
+   ],
+   "Buffet Froid": [
+
+   ],
+   "Cocktail Dinatoire": [
+      { "title":"Verrine de brocolis au pesto"},
+      { "title":"Verrine de carottes au cumin et mousse de chèvre" },
+      { "title":"Verrine d’avocat chair de crabe, crème ciboulette tomate" },
+      { "title":"Verrine mousse de petits pois, pétoncle" },
+      { "title":"Verrine mousse de choux fleur au lait de coco, jambon sec" },
+      { "title":"Verrine échalotte, pomme, noix et boudin blanc" },
+      { "title":"Verrine fraicheur au thon" },
+      { "title":"Verrine rougail crevettes" },
+      { "title":"Verrine saumon, comcombre crème" },
+      { "title":"Verrine jambon, vache qui rit et éclats de cacahuètes" },
+      { "title":"Verrine Tiramitsu à la bettrave" },
+      { "title":"Verrine poireaux, poulet, pommes" },
+      { "title":"Navette crème de moutarde, filet mignon" },
+      { "title":"Navette crème de citron, saumon fumé" },
+      { "title":"Verrine oeufs mimosa" },
+      { "title":"Verrine de brebis à la menthe, gaspacho jambon cru" },
+      { "title":"Verrine oeufs brouillés, petits pois, moutarde, jambon grillé, miel" }
+   ]
+}
