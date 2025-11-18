@@ -3,10 +3,11 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" type="image/png" href="./assets/logo.png"/>
+      <link rel="icon" type="image/png" href="./assets/image/logo.png"/>
       <title>Polo & Papilles</title>
-      <link rel="stylesheet" href="styles.css">
-      <link rel="stylesheet" href="responsive.css">
+      <link rel="stylesheet" href="./styles/styles.css">
+      <link rel="stylesheet" href="./styles/menu.css">
+      <link rel="stylesheet" href="./styles/responsive.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Radley:ital@0;1&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
    <body>
       <header>
          <div class="header_content">
-            <img src="./assets/logo.png" class="header_content-logo" alt="Logo Polo & Papilles"/>
+            <img src="./assets/image/logo.png" class="header_content-logo" alt="Logo Polo & Papilles"/>
             <nav class="header_content-nav">
                <ul class="header_content-nav-list">
                   <li class="header_content-nav-list-li"><a href="./">Accueil</a></li>
@@ -25,20 +26,66 @@
          </div>
       </header>
       <main>
-         <nav class="menu-filters">
-            <ul class="menu-filters-container">
-               <li><button class="menu-filters-container-item" data-category="Plats Uniques">Plats Uniques</button></li>
-               <li><button class="menu-filters-container-item" data-category="Planches Apéro">Planches Apéro</button></li>
-               <li><button class="menu-filters-container-item" data-category="Bufet Froid">Buffet Froid</button></li>
-               <li><button class="menu-filters-container-item" data-category="Cocktail Dinatoire">Cocktail Dinatoire</button></li>
-            </ul>
-         </nav>
          <section id="menu" class="menu">
+            <div class="data-container" data-category="Plats Uniques">
+               <h2 class="data-container-title">Plats Uniques</h2>
+               <div class="menu-item-container">
+               </div>
+            </div>
+
+            <div class="data-container" data-category="Planches Apéro">
+               <h2 class="data-container-title">Planches Apéro</h2>
+               <h3 class="data-container-subtitle">A commander 48h à l'avance</h3>
+               <div class="menu-item-container">
+               </div>
+            </div>
+
+            <div class="data-container" data-category="Buffet Froid">
+               <h2 class="data-container-title">Buffet Froid</h2>
+               <h3 class="data-container-subtitle">19.00€ par personne</h3>
+               <div class="sub-category" data-subcategory="Salades">
+                  <h3 class="sub-category-title">Salades composées (2 aux choix)</h3>
+                  <div class="menu-item-container">
+                  </div>
+               </div>
+               <div class="sub-category" data-subcategory="Charcuterie">
+                  <h3 class="sub-category-title">Charcuterie (2 aux choix)</h3>
+                  <div class="menu-item-container">
+                  </div>
+               </div>
+               <div class="sub-category" data-subcategory="Viandes">
+                  <h3 class="sub-category-title">Viandes (2 aux choix)</h3>
+                  <div class="menu-item-container">
+                  </div>
+               </div>
+               <div class="sub-category garnitures" data-subcategory="Garnitures">
+                  <h3 class="sub-category-title">Garnitures</h3>
+                  <div class="menu-item-container garnitures">
+                  </div>
+               </div>
+               <div class="sub-category" data-subcategory="Fromages">
+                  <h3 class="sub-category-title">Plateau de fromages (3 au choix)</h3>
+                  <div class="menu-item-container">
+                  </div>
+               </div>
+               <div class="sub-category" data-subcategory="Desserts">
+                  <h3 class="sub-category-title">Desserts aux choix</h3>
+                  <div class="menu-item-container">
+                  </div>
+               </div>
+            </div>
+
+            <div class="data-container" data-category="Cocktail Dinatoire">
+               <h2 class="data-container-title">Cocktail Dinatoire</h2>
+               <h3 class="data-container-subtitle">1.60€ la Verrine</h3>
+               <div class="menu-item-container">
+               </div>
+            </div>
          </section>
       </main>
       <footer>
          <div class="footer_content">
-            <img class="logo" src="./assets/logo.png" alt="logo"/>
+            <img class="logo" src="./assets/image/logo.png" alt="logo"/>
          </div>
       </footer>
       <script src="script.js"></script>

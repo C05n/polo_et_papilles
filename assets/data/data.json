@@ -25,11 +25,45 @@
       { "title": "Tartiflette","description":"Min. 10 Pers", "subtitle": "Pomme de terre, Lardons, Reblochon, Vin blanc, Crème" }
    ],
    "Planches Apéro": [
-      { "title": "Planche Apéro «POLO»","description":"Min. 8 Pers", "subtitle":"Assortiment Charcuterie + Fromage, Crudités et condiments"},
-      { "title": "Planche Apéro «Papilles»","description":"Min. 8 Pers", "subtitle":"Assortiment de charcuterie fine"}
+      { "title": "Planche Apéro «POLO»","description":"Min. 8 Pers", "subtitle":"Assortiment Charcuterie + Fromage", "subsubtitle": "Crudités et condiments", "price": "7€/La part"},
+      { "title": "Planche Apéro «Papilles»","description":"Min. 8 Pers", "subtitle":"Assortiment de charcuterie fine", "subsubtitle":"Fromage (Pont CAILLAUD St-Père en Retz) - Charcuterie fine - Mozzarella aux fruits + Houmous + Tzatziki - Crudités et condiments", "price": "10€/La part"}
    ],
    "Buffet Froid": [
-
+      { "title":"Salade Piémontaise" , "subtitle": "Jambon ou Thon", "subCategory": "Salades"},
+      { "title":"Salade Niçoise" , "subtitle": "Choux blanc, Carottes", "subCategory": "Salades"},
+      { "title":"Salade Coleslaw" , "subtitle": "", "subCategory": "Salades"},
+      { "title":"Salade de choux et lardons" , "subtitle": "", "subCategory": "Salades"},
+      { "title":"Assortiment de crudités" , "subtitle": "Legumes de saison", "subCategory": "Salades"},
+      { "title":"Salade Italienne" , "subtitle": "Tomates séchées, Mozzarella, Jambon sec, Sauce Balsamique, Roquette", "subCategory": "Salades"},
+      { "title":"Salade Tagliatelle de la mer" , "subtitle": "", "subCategory": "Salades"},
+      { "title":"Salade de champignons et lardons" , "subtitle": "", "subCategory": "Salades"},
+      { "title":"Taboulé à l'orientale" , "subtitle": "", "subCategory": "Salades"},
+      { "title":"Salade Grècque" , "subtitle": "Tomate, Comcombre, Olive, Feta", "subCategory": "Salades"},
+      { "title":"Salade Vietnamienne" , "subtitle": "Carottes, Crevettes, Soja, Choux Chinois, Comcombre", "subCategory": "Salades"},
+      { "title":"Salade Nordique" , "subtitle": "Pommes de terre, Saumon, Carottes, Courgettes, Oignons, Crème ciboulettes", "subCategory": "Salades"},
+      { "title":"Salade Fermière" , "subtitle": "Salade, Tomates, Oeufs, Emmental, Émincé de poulet, Jambon sec", "subCategory": "Salades"},
+      { "title":"Mousse de foie", "subtitle": "", "subCategory": "Charcuterie"},
+      { "title":"Mousse de foie de canard", "subtitle": "", "subCategory": "Charcuterie"},
+      { "title":"Rillettes", "subtitle": "", "subCategory": "Charcuterie"},
+      { "title":"Pâté de campagne", "subtitle": "", "subCategory": "Charcuterie"},
+      { "title":"Jambon blanc", "subtitle": "", "subCategory": "Charcuterie"},
+      { "title":"Salami", "subtitle": "", "subCategory": "Charcuterie"},
+      { "title":"Saucisson à l'ail", "subtitle": "", "subCategory": "Charcuterie"},
+      { "title":"Saucisson sec", "subtitle": "", "subCategory": "Charcuterie"},
+      { "title":"Rôti de boeuf", "subtitle": "", "subCategory": "Viandes"},
+      { "title":"Pilon de poulet", "subtitle": "", "subCategory": "Viandes"},
+      { "title":"Émincé de poulet", "subtitle": "", "subCategory": "Viandes"},
+      { "title":"Rôti de Porc", "subtitle": "", "subCategory": "Viandes"},
+      { "title":"Salade vert et chips", "subtitle": "", "subCategory": "Garnitures"},
+      { "title":"Option: Poellée de pommes de terre", "subtitle": "Supplément 2€", "subCategory": "Garnitures"},
+      { "title":"Camembert", "subtitle": "", "subCategory": "Fromages"},
+      { "title":"Gruyère", "subtitle": "", "subCategory": "Fromages"},
+      { "title":"Saint-Nectaire", "subtitle": "", "subCategory": "Fromages"},
+      { "title":"Chèvre", "subtitle": "", "subCategory": "Fromages"},
+      { "title":"Brie", "subtitle": "", "subCategory": "Fromages"},
+      { "title":"Tartelettes aux fruits", "subtitle": "", "subCategory": "Desserts"},
+      { "title":"Salade de fruits frais", "subtitle": "", "subCategory": "Desserts"},
+      { "title":"Réductions sucrées", "subtitle": "Supplément 2€", "subCategory": "Desserts"}
    ],
    "Cocktail Dinatoire": [
       { "title":"Verrine de brocolis au pesto"},
