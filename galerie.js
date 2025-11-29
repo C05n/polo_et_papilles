@@ -1,47 +1,51 @@
 // Tableau des images
-const images = ["photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg", "photo6.jpg", "photo7.jpg", "photo8.jpg"];
+const images = ["photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg"];
 const track = document.querySelector(".galerie-track");
 const speed = 1; // pixels par frame
 
-// Fonction pour ajouter une itération complète du tableau à la piste
+// Liste de toutes les images actuellement dans le DOM
+let imgElements = [];
+
+// Fonction pour ajouter une itération complète du tableau
 function appendTable() {
-  let width = 0;
-  images.forEach(src => {
-    const img = document.createElement("img");
-    img.src = `assets/photos/${src}`;
-    track.appendChild(img);
-    width += img.offsetWidth + (parseInt(getComputedStyle(img).marginRight) || 0);
-  });
-  return width;
+    const newImages = [];
+    images.forEach(src => {
+        const img = document.createElement("img");
+        img.src = `./assets/photos/${src}`; // ou ./assets/photos/${src} selon ton repo
+        track.appendChild(img);
+        newImages.push(img);
+    });
+    imgElements = imgElements.concat(newImages);
 }
 
-// Ajouter la première itération
-let totalWidth = appendTable();
+// Ajouter initialement deux itérations pour remplir la piste
+appendTable();
+appendTable();
 
-// Offset initial
+// Offset de translation
 let offset = 0;
 
-// Fonction pour vérifier si une nouvelle itération doit être ajoutée
-function checkAndAppend() {
-  // Largeur totale visible de la piste
-  const trackVisibleWidth = track.parentElement.offsetWidth;
-
-  // Si la largeur totale moins l'offset restant est inférieure à l'espace visible
-  // => il faut ajouter une nouvelle itération
-  if (totalWidth - offset < trackVisibleWidth + 100) { // +100 pour anticiper
-    totalWidth += appendTable();
-  }
-}
-
-// Animation continue
+// Fonction d’animation
 function animate() {
-  offset += speed;
-  track.style.transform = `translateX(-${offset}px)`;
+    offset += speed;
+    track.style.transform = `translateX(-${offset}px)`;
 
-  // Vérifier si une nouvelle itération doit être ajoutée
-  checkAndAppend();
+    // Vérifier si la première image est complètement sortie
+    const firstImg = imgElements[0];
+    if (firstImg && firstImg.offsetWidth + firstImg.offsetLeft - offset < 0) {
+        // Supprimer l'image du DOM et du tableau
+        track.removeChild(firstImg);
+        imgElements.shift();
+    }
 
-  requestAnimationFrame(animate);
+    // Vérifier si une nouvelle itération doit être ajoutée à droite
+    const trackWidth = imgElements.reduce((sum, img) => sum + img.offsetWidth, 0);
+    const trackVisibleWidth = track.parentElement.offsetWidth;
+    if (trackWidth - offset < trackVisibleWidth + 50) { // +50 px pour anticiper
+        appendTable();
+    }
+
+    requestAnimationFrame(animate);
 }
 
 // Démarrer l'animation
