@@ -1,52 +1,56 @@
-// Tableau des images
-const images = ["photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg"];
+const images = [
+  "photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg",
+  "photo5.jpg","photo6.jpg","photo7.jpg","photo8.jpg"
+];
+
 const track = document.querySelector(".galerie-track");
 const speed = 1; // pixels par frame
-
-// Liste de toutes les images actuellement dans le DOM
 let imgElements = [];
-
-// Fonction pour ajouter une itération complète du tableau
-function appendTable() {
-    const newImages = [];
-    images.forEach(src => {
-        const img = document.createElement("img");
-        img.src = `./assets/photos/${src}`; // ou ./assets/photos/${src} selon ton repo
-        track.appendChild(img);
-        newImages.push(img);
-    });
-    imgElements = imgElements.concat(newImages);
-}
-
-// Ajouter initialement deux itérations pour remplir la piste
-appendTable();
-appendTable();
-
-// Offset de translation
 let offset = 0;
 
-// Fonction d’animation
-function animate() {
-    offset += speed;
-    track.style.transform = `translateX(-${offset}px)`;
-
-    // Vérifier si la première image est complètement sortie
-    const firstImg = imgElements[0];
-    if (firstImg && firstImg.offsetWidth + firstImg.offsetLeft - offset < 0) {
-        // Supprimer l'image du DOM et du tableau
-        track.removeChild(firstImg);
-        imgElements.shift();
-    }
-
-    // Vérifier si une nouvelle itération doit être ajoutée à droite
-    const trackWidth = imgElements.reduce((sum, img) => sum + img.offsetWidth, 0);
-    const trackVisibleWidth = track.parentElement.offsetWidth;
-    if (trackWidth - offset < trackVisibleWidth + 50) { // +50 px pour anticiper
-        appendTable();
-    }
-
-    requestAnimationFrame(animate);
+// Ajouter une itération complète
+function appendIteration() {
+  images.forEach(src => {
+    const img = document.createElement("img");
+    img.src = `./assets/photos/${src}`;
+    track.appendChild(img);
+    imgElements.push(img);
+  });
 }
 
-// Démarrer l'animation
+// Ajouter 2 itérations initiales
+appendIteration();
+appendIteration();
+
+function animate() {
+  offset += speed;
+  track.style.transform = `translateX(-${offset}px)`;
+
+  const trackWidth = imgElements.reduce((sum, img) => sum + img.offsetWidth, 0);
+  const containerWidth = track.parentElement.offsetWidth;
+
+  if (trackWidth - offset < containerWidth + 50) {
+    appendIteration();
+
+    // Supprimer la première itération complète
+    const firstIterationCount = images.length;
+
+    // Calculer la largeur totale à retirer AVANT suppression
+    let removedWidth = 0;
+    for (let i = 0; i < firstIterationCount; i++) {
+      removedWidth += imgElements[i].offsetWidth;
+    }
+
+    for (let i = 0; i < firstIterationCount; i++) {
+      const img = imgElements.shift();
+      track.removeChild(img);
+    }
+
+    // Ajuster offset exactement
+    offset -= removedWidth;
+  }
+
+  requestAnimationFrame(animate);
+}
+
 requestAnimationFrame(animate);
