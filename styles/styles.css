@@ -135,23 +135,52 @@ header {
    object-position: center;
 }
 /*** Services ***/
-.galerie {
-   overflow: hidden;
-   max-width: 100vw;
-}
-.galerie-track {
-   
+.galerie-slider {
    display: flex;
-   flex-direction: row;
-   justify-content: space-around;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
 }
-.galerie-track img {
-   /* width: 30%; */
-   height: 30vh;
-   margin: 20px;
+.galerie-slider-img {
+   width: 35%;
    object-fit: cover;
-   flex-shrink: 0;
    border-radius: var(--border-radius);
+   box-shadow: var(--box-shadow);
+   border: 1px solid var(--border-color);
+}
+.galerie-slider-img-main {
+   width: 40%;
+}
+.galerie-slider-img-prev {
+   margin-right: -200px;
+   z-index: -1;
+   opacity: 0.6;
+}
+.galerie-slider-img-next {
+   margin-left: -200px;
+   z-index: -1;
+   opacity: 0.6;
+}
+/* Les dots de navigation */
+.dots {
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+	bottom: 40px;
+	display: flex;
+}
+.dot {
+   margin-inline: 5px;
+	width: 13px;
+	height: 13px;
+	background-color: #ffffff00;
+	border: 3px solid #fff;
+	border-radius: 100%;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+}
+.dot:hover, .dot_selected{
+   background-color: #fff;
 }
 /*** Contact ***/
 .contact {

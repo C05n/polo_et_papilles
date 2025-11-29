@@ -1,56 +1,58 @@
 const images = [
-  "photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg",
-  "photo5.jpg","photo6.jpg","photo7.jpg","photo8.jpg"
+  "photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg",
+  "photo5.jpg", "photo6.jpg", "photo7.jpg", "photo8.jpg"
 ];
 
-const track = document.querySelector(".galerie-track");
-const speed = 1; // pixels par frame
-let imgElements = [];
-let offset = 0;
+const leftImg  = document.querySelector('.galerie-slider-img-prev');
+const mainImg  = document.querySelector('.galerie-slider-img-main');
+const rightImg = document.querySelector('.galerie-slider-img-next');
 
-// Ajouter une itération complète
-function appendIteration() {
-  images.forEach(src => {
-    const img = document.createElement("img");
-    img.src = `./assets/photos/${src}`;
-    track.appendChild(img);
-    imgElements.push(img);
-  });
+const dots = document.querySelector('.dots');
+
+let currentSlide = 0;
+let timer;
+
+function updateSlides() {
+    const prevIndex = (currentSlide - 1 + images.length) % images.length;
+    const nextIndex = (currentSlide + 1) % images.length;
+
+    leftImg.src  = "./assets/photos/" + images[prevIndex];
+    mainImg.src  = "./assets/photos/" + images[currentSlide];
+    rightImg.src = "./assets/photos/" + images[nextIndex];
+
+    updateDots();
+    resetTimer();
 }
 
-// Ajouter 2 itérations initiales
-appendIteration();
-appendIteration();
-
-function animate() {
-  offset += speed;
-  track.style.transform = `translateX(-${offset}px)`;
-
-  const trackWidth = imgElements.reduce((sum, img) => sum + img.offsetWidth, 0);
-  const containerWidth = track.parentElement.offsetWidth;
-
-  if (trackWidth - offset < containerWidth + 50) {
-    appendIteration();
-
-    // Supprimer la première itération complète
-    const firstIterationCount = images.length;
-
-    // Calculer la largeur totale à retirer AVANT suppression
-    let removedWidth = 0;
-    for (let i = 0; i < firstIterationCount; i++) {
-      removedWidth += imgElements[i].offsetWidth;
-    }
-
-    for (let i = 0; i < firstIterationCount; i++) {
-      const img = imgElements.shift();
-      track.removeChild(img);
-    }
-
-    // Ajuster offset exactement
-    offset -= removedWidth;
-  }
-
-  requestAnimationFrame(animate);
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % images.length;
+    updateSlides();
 }
 
-requestAnimationFrame(animate);
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + images.length) % images.length;
+    updateSlides();
+}
+
+function resetTimer() {
+    clearTimeout(timer);
+    timer = setTimeout(nextSlide, 3000);
+}
+
+function updateDots() {
+    dots.innerHTML = '';
+    for (let i = 0; i < images.length; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === currentSlide) dot.classList.add('dot_selected');
+
+        dot.addEventListener('click', () => {
+            currentSlide = i;
+            updateSlides();
+        });
+
+        dots.appendChild(dot);
+    }
+}
+
+updateSlides();
