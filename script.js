@@ -9,8 +9,7 @@ fetch("./assets/data/data.json")
    .catch(err => console.error("Erreur JSON :", err));
 
 function creerHTMLItem(item, categoryName, itemsCount) {
-   // Template spécial pour Planches Apéro ou pour peu d'items
-   if (categoryName === "Planches Apéro" || categoryName === "Cocktail Dinatoire") {
+   if (categoryName === "Planches Apéro") {
       return `
       <div class="card-item">
          <h3 class="menu-item-title">${item.title || ""}</h3>
@@ -21,8 +20,6 @@ function creerHTMLItem(item, categoryName, itemsCount) {
       </div>
       `;
    }
-
-   // Template par défaut
    return `
    <div class="menu-item">
       <h3 class="menu-item-title">${item.title || ""}</h3>
@@ -44,11 +41,9 @@ function remplirToutesLesCategories() {
          return;
       }
 
-      // Vérifier si la catégorie contient des sous-catégories
       const subCategoryDivs = div.querySelectorAll(".sub-category");
 
       if (subCategoryDivs.length > 0) {
-         // Cas avec sous-catégories
          subCategoryDivs.forEach(subDiv => {
             const subName = subDiv.dataset.subcategory;
             const subContainer = subDiv.querySelector(".menu-item-container");
@@ -65,7 +60,6 @@ function remplirToutesLesCategories() {
                .join("");
          });
       } else {
-         // Cas sans sous-catégorie
          const container = div.querySelector(".menu-item-container");
          container.innerHTML = items
             .map(item => creerHTMLItem(item, categoryName, items.length))
