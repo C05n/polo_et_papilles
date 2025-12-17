@@ -169,7 +169,7 @@ header {
    max-width: 1800px;
    width: 90%;
    margin: 0 auto;
-   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-columns: repeat(3, 1fr);
    grid-template-rows: repeat(0.5fr);
    gap: 3rem;
    justify-items: center;
