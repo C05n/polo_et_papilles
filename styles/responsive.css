@@ -32,7 +32,7 @@
    }
    /*** Intro ***/
    .intro {
-      min-height: 60dvh;
+      min-height: 100dvh;
    }
    .intro_text {
       width: 90%;
