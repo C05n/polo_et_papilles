@@ -28,11 +28,12 @@
       margin-left: 0;
    }
    .header_content-nav-list {
-      justify-content: space-between;
-      width: 100%;
-      margin: 10px 0;
+      display: none;
    }
    /*** Intro ***/
+   .intro {
+      min-height: 60dvh;
+   }
    .intro_text {
       width: 90%;
       margin-top: 1.5em;
@@ -53,13 +54,40 @@
       width: 80%;
       margin-top: 1.5em;
    }
+   /*** Services ***/
+   .service_container {
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+   }
+   .service_container-item {
+      width: 90%;
+      font-size: 1em;
+   }
+   .service_container-item img {
+      width: 50px;
+   }
+   .service_container-item h3 {
+      margin-top: 0.2em;
+   }
+   .service_cta {
+      margin-top: 2em;
+      margin-bottom: 3em;
+   }
    /* Galerie */
    .galerie-slider {
       grid-template-columns: repeat(2, 1fr);     
       grid-template-rows: repeat(0.5fr, 1fr);
+      gap: 1.2em;
    }
-
+   .galerie-slider-img:nth-child(n+9) {
+      display: none;
+   }
    /*** Contact ***/
+   .contact {
+      min-height: auto;
+      padding: 5em 0;
+   }
    .contact-text {
       width: 90%;
    }
@@ -92,5 +120,14 @@
    }
    .menu-nav {
       display: none;
+   }
+
+   /*** Footer ***/
+   footer {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      border-radius: 0;
+      background-color: #171a1c;
    }
 }
