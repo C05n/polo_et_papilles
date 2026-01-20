@@ -280,13 +280,6 @@ header {
    height: 2em;
    border-radius: 50%;
 }
-.map {
-   width: 40%;
-   height: 500px;
-   border-radius: var(--border-radius);
-   overflow: hidden;
-   box-shadow: var(--box-shadow);
-}
 /*** Footer ***/
 footer {
    width: 90%;
@@ -307,6 +300,21 @@ footer {
    align-items: center;
    margin: 0 auto;
 }
+
 .logo {
    width: 9em;
+}
+.footer_info {
+   margin-left: 2em;
+   font-size: 1rem;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+.footer_link {
+   margin-left: auto;
+   margin-top: 80px;
+   font-size: 1rem;
+   color: var(--secondary-font-color);
+   text-decoration: underline;
 }

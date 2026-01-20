@@ -80,9 +80,6 @@
       grid-template-rows: repeat(0.5fr, 1fr);
       gap: 1.2em;
    }
-   .galerie-slider-img:nth-child(n+9) {
-      display: none;
-   }
    /*** Contact ***/
    .contact {
       min-height: auto;
@@ -101,9 +98,6 @@
       font-size: 1em;
       margin-bottom: 1em;
       flex-direction: column;
-   }
-   .map {
-      display: none;
    }
    /*** Footer ***/
    footer {
@@ -129,5 +123,19 @@
       margin: 0;
       border-radius: 0;
       background-color: #171a1c;
+   }
+   .footer_content {
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+      padding: 1em 0;
+   }
+   .footer_info {
+      text-align: center;
+      gap: 10px;
+   }
+   .footer_link {
+      margin-top: 10px;
+      margin: 0;
    }
 }
