@@ -77,7 +77,7 @@
    /* Galerie */
    .galerie-container {
       grid-template-columns: repeat(2, 1fr);     
-      grid-template-rows: repeat(0.5fr, 1fr);
+      grid-template-rows: repeat(6, minmax(0, 0.8fr));
       gap: 1.2em;
    }
    .galerie_item-title {
@@ -140,5 +140,17 @@
    .footer_link {
       margin-top: 10px;
       margin: 0;
+   }
+   /*** Legal ***/
+   .legal {
+      margin: 2em 0;
+   }
+   .return {
+      width: 3rem;
+      height: fit-content;
+      position: relative;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
    }
 }
