@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu - Polo & Papilles</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/menu.css" />
+  </head>
+
+  <body class="menu-page">
+    <header>
+         <img src="./assets/image/logo.png" class="header_content-logo" alt="Logo Polo & Papilles"/>
+         <nav class="header_content-nav">
+            <ul class="header_content-nav-list">
+               <li class="header_content-nav-list-li"><a href="./">Accueil</a></li>
+               <li class="header_content-nav-list-li"><a href="#menu">Menu</a></li>
+               <li class="header_content-nav-list-li header_content-contact"><a href="#contact">Contact</a></li>
+            </ul>
+         </nav>
+      </header>
+
+    <main class="menu-shell">
+      <a href="./assets/menu.pdf" target="_blank" class="menu_cta">Télécharger la carte des plats</a>
+      <div id="menu-container">
+
+      </div>
+    </main>
+
+   <footer>
+      <div class="footer_content">
+         <img class="logo" src="./assets/image/logo.png" alt="logo"/>
+         <div class="footer_info">
+            <p>Polo & Papilles - Traiteur à Saint-Père en Retz</p>
+            <a href="tel:0699567005">Tel : 06.99.56.70.05</a>
+            <p>Email : polo.papilles@gmail.com</p>
+         </div>
+         <div class="footer_social">
+            
+         </div>
+         <a href="./legal.html" class="footer_link">Mentions légales</a>
+      </div>
+   </footer>
+
+    <script>
+      const escapeHtml = (value = "") =>
+        String(value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+
+      function buildDishCard(item) {
+        const title = escapeHtml(item.title || "");
+        const description = item.description ? `<p class="description">${escapeHtml(item.description)}</p>` : "";
+        const subtitle = item.subtitle ? `<p class="subtitle">${escapeHtml(item.subtitle)}</p>` : "";
+        const subsubtitle = item.subsubtitle ? `<p class="subsubtitle">${escapeHtml(item.subsubtitle)}</p>` : "";
+        const price = item.price ? `<span class="price">${escapeHtml(item.price)}</span>` : "";
+        const tag = item.subCategory ? `<span class="tag">${escapeHtml(item.subCategory)}</span>` : "";
+
+        return `
+          <article class="dish-card">
+            <div class="topline">
+              <h4>${title}</h4>
+              ${price}
+            </div>
+            ${description}
+            ${subtitle}
+            ${subsubtitle}
+            ${tag}
+          </article>
+        `;
+      }
+
+      function buildCategoryCards(items) {
+        return items.map(buildDishCard).join("");
+      }
+
+      function renderBuffetFroid(items) {
+        const groups = items.reduce((acc, item) => {
+          const key = item.subCategory || "Autres";
+          if (!acc[key]) acc[key] = [];
+          acc[key].push(item);
+          return acc;
+        }, {});
+
+        return `
+          <section class="menu-category">
+            <div class="category-header">
+              <h2>Buffet Froid</h2>
+            </div>
+            ${Object.entries(groups)
+              .map(([subCategory, groupItems]) => `
+                <div class="menu-subgroup">
+                  <h3>${escapeHtml(subCategory)}</h3>
+                  <div class="menu-grid">
+                    ${buildCategoryCards(groupItems)}
+                  </div>
+                </div>
+              `)
+              .join("")}
+          </section>
+        `;
+      }
+
+      function renderMenu(data) {
+        return Object.entries(data)
+          .map(([category, items]) => {
+            if (category === "Buffet Froid") {
+              return renderBuffetFroid(items);
+            }
+
+            return `
+              <section class="menu-category">
+                <div class="category-header">
+                  <h2>${escapeHtml(category)}</h2>
+                </div>
+                <div class="menu-grid">
+                  ${buildCategoryCards(items)}
+                </div>
+              </section>
+            `;
+          })
+          .join("");
+      }
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        const container = document.getElementById("menu-container");
+
+        try {
+          const response = await fetch("assets/data/data.json", { cache: "no-store" });
+
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+
+          const data = await response.json();
+          container.innerHTML = renderMenu(data);
+        } catch (error) {
+          console.error("Erreur de chargement du menu :", error);
+          container.innerHTML = `
+            <p class="error">Le menu est actuellement indisponible. Merci de réessayer plus tard.</p>
+          `;
+        }
+      });
+    </script>
+  </body>
+</html>
